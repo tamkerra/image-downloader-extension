@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Image format Downloader",
+  "version": "1.0",
+  "description": "this extension allows you to download images in various formats from the web., including WebP, JPEG, PNG, and GIF.",
+  "permissions": ["downloads", "scripting", "activeTab", "contextMenus"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://youtube.com/*", "https://www.pinterest.com/*", "https://www.instagram.com/*", "https://www.facebook.com/*", "https://www.x.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
